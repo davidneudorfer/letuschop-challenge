@@ -1,0 +1,31 @@
+---
+
+- name: copy consul-template config
+  copy: >
+    src="{{ item }}"
+    dest=/opt/consul-template/config/{{ item }}
+    owner=root
+    group=root
+    mode=0700
+  with_items:
+    - index.html.cfg
+    - letuschop.conf.cfg
+
+- name: copy consul-template template
+  copy: >
+    src="{{ item }}"
+    dest=/opt/consul-template/templates/{{ item }}
+    owner=root
+    group=root
+    mode=0700
+  with_items:
+    - index.html.ctmpl
+    - letuschop.conf.ctmpl
+
+- name: create root www directory
+  file: >
+    path=/www/data/letuschop
+    state=directory
+    owner=www-data
+    group=root
+    mode=0700

@@ -1,0 +1,115 @@
+---
+
+- name: install consul dependencies
+  apt: >
+    name={{ item }}
+    state=present
+  with_items:
+    - unzip
+    - curl
+
+- name: download consul binary
+  get_url: >
+    url=https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_amd64.zip
+    dest=/tmp/consul.zip
+
+- name: unarchive binary
+  unarchive: >
+    src=/tmp/consul.zip
+    dest=/usr/bin/
+    copy=no
+    mode=u+x
+
+- name: download consul web ui
+  get_url: >
+    url=https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_web_ui.zip
+    dest=/tmp/consul-web.zip
+  when: consul_server|bool
+
+- name: create web ui directory
+  file: >
+    path=/opt/consul/web
+    state=directory
+  when: consul_server|bool
+
+- name: unarchive web ui
+  unarchive: >
+    src=/tmp/consul-web.zip
+    dest=/opt/consul/web
+    copy=no
+    mode=u+x
+  when: consul_server|bool
+
+- name: add nginx config template (with oauth2-proxy option)
+  template: >
+    src=consul-nginx.conf.ctmpl.j2
+    dest=/opt/consul-template/templates/consul-nginx.conf.ctmpl
+  when: consul_server|bool
+
+- name: add consul-template config for nginx config template
+  template: >
+    src=consul-nginx.cfg.j2
+    dest=/opt/consul-template/config/consul-nginx.cfg
+  when: consul_server|bool
+
+- name: add consul user
+  user: >
+    name=consul
+    createhome=no
+
+- name: create consul config dir
+  file: >
+    path=/etc/consul.d
+    state=directory
+    mode=777
+
+- name: create consul data dir
+  file: >
+    path=/opt/consul/data
+    state=directory
+    owner=consul
+    group=consul
+    recurse=yes
+
+- name: create consul log
+  file: >
+    path=/var/log/consul.log
+    state=touch
+    owner=consul
+    group=consul
+
+- name: add consul config
+  template: >
+    src=consul.d/consul.json.j2
+    dest=/etc/consul.d/consul.json.tmp
+
+- name: add consul systemd
+  template: >
+    src=init/consul.service.systemd.j2
+    dest=/etc/systemd/system/consul.service
+    mode=0644
+  when: consul_use_systemd or ansible_distribution  == "Ubuntu"
+
+- name: add consul upstart
+  template: >
+    src=init/consul.service.upstart.j2
+    dest=/etc/systemd/system/consul.conf
+    mode=0755
+  when: consul_use_upstart or ansible_distribution  == "CentOS"
+
+# https://github.com/kelseyhightower/setup-network-environment
+- name: install setup-network-environment
+  copy: >
+    src=setup-network-environment.service
+    dest=/etc/systemd/system/setup-network-environment.service
+  when: consul_use_systemd or ansible_distribution  == "Ubuntu"
+
+- name: enable setup-network-environment service
+  service: >
+    name=setup-network-environment
+    enabled=true
+
+- name: enable consul service
+  service: >
+    name=consul
+    enabled=true

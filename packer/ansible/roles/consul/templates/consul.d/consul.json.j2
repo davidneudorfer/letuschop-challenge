@@ -1,0 +1,19 @@
+{% raw %}{
+  "node_name": "{{ hostname }}",
+
+  "data_dir": "/opt/consul/data",
+  "ui_dir": "/opt/consul/web",
+
+  "log_level": "INFO",
+  "enable_syslog": true,
+
+  "leave_on_terminate": true,
+  "dns_config": {
+    "enable_truncate" : true
+  },
+
+  "datacenter": "{{ region }}"{% endraw %}{% if consul_server %}{% raw %},
+  "server": true,
+  "bootstrap_expect": {{ consul_bootstrap_expect }}{% endraw %}{% endif %}
+
+}

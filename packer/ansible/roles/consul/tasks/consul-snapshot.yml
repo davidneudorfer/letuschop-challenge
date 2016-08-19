@@ -1,0 +1,43 @@
+---
+
+- name: install consul-snapshot dependencies
+  apt: >
+    name={{ item }}
+    state=present
+  with_items:
+    - git
+
+- name: download consul-snapshot binary
+  get_url: >
+    url=https://storage.googleapis.com/golang/go{{ golang_version }}.linux-amd64.tar.gz
+    dest=/tmp/go.linux-amd64.tar.gz
+
+- name: unarchive binary
+  unarchive: >
+    src=/tmp/go.linux-amd64.tar.gz
+    dest=/usr/local
+    copy=no
+    mode=u+x
+
+- name: add GOPATH directory
+  file: >
+    path=/root/go
+    state=directory
+
+- name: install consul-snapshot
+  shell: >
+    /usr/local/go/bin/go get github.com/pshima/consul-snapshot
+  environment:
+    GOPATH: /root/go
+  args:
+    executable: /bin/bash
+
+- name: add consul-snapshot upstart consul template config
+  copy: >
+    src=consul-snapshot.service.upstart.ctmpl
+    dest=/opt/consul-template/templates/consul-snapshot.service.upstart.ctmpl
+
+- name: add consul-template config
+  copy: >
+    src=consul-snapshot-service.cfg
+    dest=/opt/consul-template/config/consul-snapshot-service.cfg

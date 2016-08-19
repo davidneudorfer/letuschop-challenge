@@ -1,0 +1,16 @@
+---
+
+- name: install dnsmasq
+  apt: >
+    name=dnsmasq
+    state=present
+
+- name: configure dnsmasq for consul dns
+  copy: >
+    src=10-consul
+    dest=/etc/dnsmasq.d/10-consul
+
+- name: enable the dnsmasq service
+  service: >
+    name=dnsmasq
+    state=started

@@ -1,0 +1,8 @@
+---
+
+- include: consul-template.yml
+- include: consul.yml
+- include: consul-snapshot.yml
+  when: consul_backup|bool
+- include: dnsmasq.yml
+  when: dnsmasq|bool

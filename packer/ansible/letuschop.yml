@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  become_user: root
+  roles:
+    - role: base
+    - role: nginx
+    - role: consul
+      consul_use_upstart: false
+      consul_use_systemd: true
+      service_name: letuschop
+      consul_server: true
+      consul_backup: false
+    - role: letuschop
