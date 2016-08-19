@@ -4,7 +4,7 @@
 Install [docker-toolbox](https://www.docker.com/products/docker-toolbox) and ensure you're able to run docker.  
 `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY` need to be in your enviroment.
 
-## run
+## usage
 
 `make` to see all options  
 `make build` to complete challenge
@@ -35,6 +35,24 @@ Browse to the elb on port 8080, click "KEY/VALUE", create a key called "homepage
 * packer
 * terraform
 * consul
+
+
+## why
+
+I followed AWS best practices by building a VPC with pubic and private subnets,
+placing the application inside a of a private subnet, and the elb and bastian
+host inside the public subnet. The instances are immutable and in autoscale groups
+therefor if one instance gets removed a new one will take its place with. The
+addition of consul was just for demonstration purposes.
+
+## postmortem
+
+I like this infrastructure model and having built it before it went smoothly.
+One issue that surfaced was the fact that Ubuntu Xenial Xerus uses systemd
+which I am less familiar with then upstart. The biggest issue was the constraint
+that one command had to launch everything. Placing all the tools inside of a docker
+container assured me that I would be able to run this anywhere with little to no
+issues. I'd implement a production ready version of this.
 
 ### errors
 
