@@ -1,0 +1,13 @@
+*.terraform/
+*.box
+*.tfplan
+*.tfstate
+*.tfstate.backup
+
+# User-specific stuff:
+.idea/
+*.iws
+
+# Packer stuff
+*.box
+packer_cache/

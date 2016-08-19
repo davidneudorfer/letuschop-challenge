@@ -1,0 +1,57 @@
+{
+  "variables": {
+    "region":             "us-west-1",
+    "source_ami":         "ami-5df6b03d",
+    "aws_access_key":     "{{ env `AWS_ACCESS_KEY_ID` }}",
+    "aws_secret_key":     "{{ env `AWS_SECRET_ACCESS_KEY` }}",
+    "ami_name":           "letuschop"
+  },
+  "builders": [
+    {
+      "type":               "amazon-ebs",
+      "region":             "{{user `region`}}",
+      "source_ami":         "{{user `source_ami`}}",
+      "instance_type":      "m3.large",
+      "ssh_username":       "ubuntu",
+      "ami_name":           "{{user `ami_name`}}-{{timestamp}}",
+      "access_key":         "{{user `aws_access_key`}}",
+      "secret_key":         "{{user `aws_secret_key`}}",
+      "ami_block_device_mappings": [ {
+          "device_name": "/dev/sda1",
+          "volume_size": 12,
+          "delete_on_termination": true
+        } ],
+      "launch_block_device_mappings": [ {
+          "device_name": "/dev/sda1",
+          "volume_size": 12,
+          "delete_on_termination": true
+      } ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "scripts": [
+        "scripts/update.sh",
+        "scripts/sleep.sh",
+        "scripts/sshd.sh",
+        "scripts/aws-cli.sh",
+        "scripts/ansible2.sh"
+      ]
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "ansible/letuschop.yml",
+      "playbook_dir": "ansible",
+      "group_vars": "ansible/group_vars/"
+    },
+    {
+      "type": "shell",
+      "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "scripts": [
+        "scripts/cleanup.sh"
+      ]
+    }
+  ]
+}

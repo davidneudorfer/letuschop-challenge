@@ -1,0 +1,10 @@
+#
+# consul-nginx config
+#
+
+template {
+  source = "/opt/consul-template/templates/consul-nginx.conf.ctmpl"
+  destination = "/etc/nginx/conf.d/consul.conf"
+  command = "sudo service nginx restart"
+  perms = 0644
+}

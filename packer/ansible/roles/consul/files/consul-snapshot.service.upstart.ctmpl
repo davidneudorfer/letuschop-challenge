@@ -1,0 +1,21 @@
+description "Consul Snapshot"
+
+start on vagrant-ready or runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+env S3BUCKET={{ key "consul/backup/s3_bucket" }}
+env AWS_ACCESS_KEY_ID={{ key "consul/backup/aws_access_key_id" }}
+env AWS_SECRET_ACCESS_KEY={{ key "consul/backup/aws_secret_access_key" }}
+env S3REGION={{ key "consul/backup/s3_region" }}
+env BACKUPINTERVAL={{ key "consul/backup/backup_interval" }}
+env GOPATH=/root/go
+env PATH=$PATH:$GOPATH/bin
+
+setuid root
+setgid root
+
+console log
+
+exec /root/go/bin/consul-snapshot backup >> /var/log/consul-snapshot.log 2>&1

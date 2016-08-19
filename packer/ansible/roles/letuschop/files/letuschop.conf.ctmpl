@@ -1,0 +1,59 @@
+# PACKER & CONSUL MANAGED - DO NOT EDIT
+
+server {
+
+    listen 80 default_server;
+    server_name _;
+
+    # Don't allow trailing slashes in the url path.
+    rewrite ^/(.*)/$ /$1 permanent;
+
+    access_log syslog:server=unix:/dev/log,tag=nginx letuschop_default;
+    error_log syslog:server=unix:/dev/log,tag=nginx;
+
+    location /health {
+        access_log off;
+        return 200;
+    }
+
+    location @error404 {
+        # Send a cache-control header on 404 to make sure downstream
+        # caches don't try to cache momentary errors.
+        add_header Cache-Control "no-cache" always;
+    }
+
+    #
+    root /www/data/letuschop;
+    location / {
+    }
+
+    # No need to pass these upstream. Also note that misbehaving clients
+    # may ignore our <link> element and request this file from various
+    # paths, so we match any location containing the filename.
+    location ~* favicon.ico {
+        rewrite ^(.*)$ /favicon.ico break;
+    }
+
+    location ~* ^/s3/(.*) {
+        error_page 404 = @error404;
+
+        set $s3_bucket        '{{ key_or_default "s3_assets" "letuschop-terraform" }}.s3.amazonaws.com';
+        set $url_full         '$1';
+
+        proxy_http_version     1.1;
+        proxy_set_header       Host $s3_bucket;
+        proxy_set_header       Authorization '';
+        proxy_hide_header      x-amz-id-2;
+        proxy_hide_header      x-amz-request-id;
+        proxy_hide_header      Set-Cookie;
+        proxy_ignore_headers   "Set-Cookie";
+        proxy_buffering        on;
+        proxy_intercept_errors on;
+
+        resolver               10.0.0.2 valid=300s;
+        resolver_timeout       10s;
+
+        proxy_pass             http://$s3_bucket/$url_full;
+    }
+
+}

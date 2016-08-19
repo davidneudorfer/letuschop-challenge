@@ -1,0 +1,5 @@
+---
+
+dependencies:
+  - role: nginx
+    when: consul_server|bool

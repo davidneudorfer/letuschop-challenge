@@ -1,0 +1,554 @@
+1471626548,,ui,say,amazon-ebs output will be in this color.
+1471626548,,ui,say,
+1471626548,,ui,say,==> amazon-ebs: Prevalidating AMI Name...
+1471626548,,ui,say,==> amazon-ebs: Inspecting the source AMI...
+1471626548,,ui,say,==> amazon-ebs: Creating temporary keypair: packer 57b73d34-7f31-c0e6-7e8a-7516a706dad0
+1471626548,,ui,say,==> amazon-ebs: Creating temporary security group for this instance...
+1471626548,,ui,say,==> amazon-ebs: Authorizing access to port 22 the temporary security group...
+1471626549,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1471626549,,ui,message,    amazon-ebs: Instance ID: i-44797bf1
+1471626549,,ui,say,==> amazon-ebs: Waiting for instance (i-44797bf1) to become ready...
+1471626565,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1471626642,,ui,say,==> amazon-ebs: Connected to SSH!
+1471626642,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/update.sh
+1471626668,,ui,message,    amazon-ebs: /tmp/script_6951.sh: 5: /tmp/script_6951.sh: [[: not found
+1471626668,,ui,message,    amazon-ebs: gpg: key 437D05B5: "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>" not changed
+1471626668,,ui,message,    amazon-ebs: gpg: key FBB75451: "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>" not changed
+1471626668,,ui,message,    amazon-ebs: gpg: key C0B21F32: "Ubuntu Archive Automatic Signing Key (2012) <ftpmaster@ubuntu.com>" not changed
+1471626668,,ui,message,    amazon-ebs: gpg: key EFE21092: "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>" not changed
+1471626668,,ui,message,    amazon-ebs: gpg: Total number processed: 4
+1471626668,,ui,message,    amazon-ebs: gpg:              unchanged: 4
+1471626668,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily InRelease
+1471626668,,ui,message,    amazon-ebs: Get:1 http://us-west-1.ec2.archive.ubuntu.com wily-updates InRelease [65.9 kB]
+1471626668,,ui,message,    amazon-ebs: Get:2 http://us-west-1.ec2.archive.ubuntu.com wily-backports InRelease [65.9 kB]
+1471626669,,ui,message,    amazon-ebs: Get:3 http://us-west-1.ec2.archive.ubuntu.com wily/main Sources [1%!(PACKER_COMMA)118 kB]
+1471626669,,ui,message,    amazon-ebs: Get:4 http://security.ubuntu.com wily-security InRelease [65.9 kB]
+1471626669,,ui,message,    amazon-ebs: Get:5 http://us-west-1.ec2.archive.ubuntu.com wily/restricted Sources [7%!(PACKER_COMMA)181 B]
+1471626669,,ui,message,    amazon-ebs: Get:6 http://us-west-1.ec2.archive.ubuntu.com wily/universe Sources [7%!(PACKER_COMMA)238 kB]
+1471626669,,ui,message,    amazon-ebs: Get:7 http://us-west-1.ec2.archive.ubuntu.com wily/multiverse Sources [178 kB]
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/main amd64 Packages
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/restricted amd64 Packages
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/universe amd64 Packages
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/multiverse amd64 Packages
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/main Translation-en
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/multiverse Translation-en
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/restricted Translation-en
+1471626670,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/universe Translation-en
+1471626670,,ui,message,    amazon-ebs: Get:8 http://us-west-1.ec2.archive.ubuntu.com wily-updates/main Sources [88.4 kB]
+1471626670,,ui,message,    amazon-ebs: Get:9 http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted Sources [3%!(PACKER_COMMA)741 B]
+1471626670,,ui,message,    amazon-ebs: Get:10 http://security.ubuntu.com wily-security/main Sources [55.3 kB]
+1471626670,,ui,message,    amazon-ebs: Get:11 http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe Sources [28.4 kB]
+1471626670,,ui,message,    amazon-ebs: Get:12 http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse Sources [3%!(PACKER_COMMA)198 B]
+1471626670,,ui,message,    amazon-ebs: Get:13 http://us-west-1.ec2.archive.ubuntu.com wily-updates/main amd64 Packages [245 kB]
+1471626670,,ui,message,    amazon-ebs: Get:14 http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted amd64 Packages [13.3 kB]
+1471626670,,ui,message,    amazon-ebs: Get:15 http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe amd64 Packages [105 kB]
+1471626670,,ui,message,    amazon-ebs: Get:16 http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse amd64 Packages [6%!(PACKER_COMMA)248 B]
+1471626670,,ui,message,    amazon-ebs: Get:17 http://us-west-1.ec2.archive.ubuntu.com wily-updates/main Translation-en [117 kB]
+1471626670,,ui,message,    amazon-ebs: Get:18 http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse Translation-en [3%!(PACKER_COMMA)156 B]
+1471626670,,ui,message,    amazon-ebs: Get:19 http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted Translation-en [3%!(PACKER_COMMA)024 B]
+1471626670,,ui,message,    amazon-ebs: Get:20 http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe Translation-en [60.2 kB]
+1471626670,,ui,message,    amazon-ebs: Get:21 http://us-west-1.ec2.archive.ubuntu.com wily-backports/main Sources [748 B]
+1471626670,,ui,message,    amazon-ebs: Get:22 http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted Sources [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:23 http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe Sources [2%!(PACKER_COMMA)257 B]
+1471626670,,ui,message,    amazon-ebs: Get:24 http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse Sources [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:25 http://us-west-1.ec2.archive.ubuntu.com wily-backports/main amd64 Packages [619 B]
+1471626670,,ui,message,    amazon-ebs: Get:26 http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted amd64 Packages [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:27 http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe amd64 Packages [2%!(PACKER_COMMA)006 B]
+1471626670,,ui,message,    amazon-ebs: Get:28 http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse amd64 Packages [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:29 http://us-west-1.ec2.archive.ubuntu.com wily-backports/main Translation-en [496 B]
+1471626670,,ui,message,    amazon-ebs: Get:30 http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse Translation-en [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:31 http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted Translation-en [28 B]
+1471626670,,ui,message,    amazon-ebs: Get:32 http://security.ubuntu.com wily-security/restricted Sources [2%!(PACKER_COMMA)854 B]
+1471626670,,ui,message,    amazon-ebs: Get:33 http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe Translation-en [1%!(PACKER_COMMA)390 B]
+1471626670,,ui,message,    amazon-ebs: Get:34 http://security.ubuntu.com wily-security/universe Sources [14.3 kB]
+1471626670,,ui,message,    amazon-ebs: Get:35 http://security.ubuntu.com wily-security/multiverse Sources [2%!(PACKER_COMMA)784 B]
+1471626670,,ui,message,    amazon-ebs: Get:36 http://security.ubuntu.com wily-security/main amd64 Packages [180 kB]
+1471626671,,ui,message,    amazon-ebs: Get:37 http://security.ubuntu.com wily-security/restricted amd64 Packages [10.9 kB]
+1471626671,,ui,message,    amazon-ebs: Get:38 http://security.ubuntu.com wily-security/universe amd64 Packages [57.3 kB]
+1471626671,,ui,message,    amazon-ebs: Get:39 http://security.ubuntu.com wily-security/multiverse amd64 Packages [6%!(PACKER_COMMA)248 B]
+1471626671,,ui,message,    amazon-ebs: Get:40 http://security.ubuntu.com wily-security/main Translation-en [88.2 kB]
+1471626671,,ui,message,    amazon-ebs: Get:41 http://security.ubuntu.com wily-security/multiverse Translation-en [2%!(PACKER_COMMA)806 B]
+1471626671,,ui,message,    amazon-ebs: Get:42 http://security.ubuntu.com wily-security/restricted Translation-en [2%!(PACKER_COMMA)666 B]
+1471626672,,ui,message,    amazon-ebs: Get:43 http://security.ubuntu.com wily-security/universe Translation-en [37.4 kB]
+1471626672,,ui,message,    amazon-ebs: Fetched 9%!(PACKER_COMMA)884 kB in 3s (2%!(PACKER_COMMA)545 kB/s)
+1471626676,,ui,message,    amazon-ebs: Reading package lists...
+1471626676,,ui,message,    amazon-ebs: Reading package lists...
+1471626676,,ui,message,    amazon-ebs: Building dependency tree...
+1471626676,,ui,message,    amazon-ebs: Reading state information...
+1471626676,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 0 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1471626679,,ui,message,    amazon-ebs: Must be connected to a terminal.
+1471626750,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/sleep.sh
+1471626811,,ui,message,    amazon-ebs:
+1471626811,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/sshd.sh
+1471626811,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/aws-cli.sh
+1471626815,,ui,message,    amazon-ebs: Reading package lists...
+1471626815,,ui,message,    amazon-ebs: Building dependency tree...
+1471626815,,ui,message,    amazon-ebs: Reading state information...
+1471626815,,ui,message,    amazon-ebs: Suggested packages:
+1471626815,,ui,message,    amazon-ebs: zip
+1471626815,,ui,message,    amazon-ebs: The following NEW packages will be installed:
+1471626815,,ui,message,    amazon-ebs: unzip
+1471626815,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 1 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1471626815,,ui,message,    amazon-ebs: Need to get 158 kB of archives.
+1471626815,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 531 kB of additional disk space will be used.
+1471626815,,ui,message,    amazon-ebs: Get:1 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily-updates/main unzip amd64 6.0-17ubuntu1.2 [158 kB]
+1471626816,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1471626816,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1471626816,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1471626816,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Readline
+1471626816,,ui,message,    amazon-ebs: debconf: (This frontend requires a controlling tty.)
+1471626816,,ui,message,    amazon-ebs: debconf: falling back to frontend: Teletype
+1471626816,,ui,message,    amazon-ebs: dpkg-preconfigure: unable to re-open stdin:
+1471626816,,ui,message,    amazon-ebs: Fetched 158 kB in 0s (10.3 MB/s)
+1471626816,,ui,message,    amazon-ebs: Selecting previously unselected package unzip.
+1471626819,,ui,message,    amazon-ebs: (Reading database ... 57055 files and directories currently installed.)
+1471626819,,ui,message,    amazon-ebs: Preparing to unpack .../unzip_6.0-17ubuntu1.2_amd64.deb ...
+1471626819,,ui,message,    amazon-ebs: Unpacking unzip (6.0-17ubuntu1.2) ...
+1471626819,,ui,message,    amazon-ebs: Processing triggers for man-db (2.7.4-1) ...
+1471626822,,ui,message,    amazon-ebs: Processing triggers for mime-support (3.58ubuntu1) ...
+1471626822,,ui,message,    amazon-ebs: Setting up unzip (6.0-17ubuntu1.2) ...
+1471626826,,ui,message,    amazon-ebs: Archive:  awscli-bundle.zip
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/install
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/jmespath-0.9.0.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/simplejson-3.3.0.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/ordereddict-1.1.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/rsa-3.4.2.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/futures-3.0.5.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/botocore-1.4.48.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/s3transfer-0.1.2.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/docutils-0.12.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/colorama-0.3.7.zip
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/argparse-1.2.1.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/awscli-1.10.58.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/pyasn1-0.1.9.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/virtualenv-13.0.3.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/python-dateutil-2.5.3.tar.gz
+1471626826,,ui,message,    amazon-ebs: inflating: awscli-bundle/packages/six-1.10.0.tar.gz
+1471626838,,ui,message,    amazon-ebs: Running cmd: /usr/bin/python virtualenv.py --python /usr/bin/python /usr/local/aws
+1471626838,,ui,message,    amazon-ebs: Running cmd: /usr/local/aws/bin/pip install --no-index --find-links file:///home/ubuntu/awscli-bundle/packages awscli-1.10.58.tar.gz
+1471626838,,ui,message,    amazon-ebs: You can now run: /usr/local/bin/aws --version
+1471626838,,ui,message,    amazon-ebs: aws-cli/1.10.58 Python/2.7.10 Linux/4.2.0-42-generic botocore/1.4.48
+1471626839,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/ansible2.sh
+1471626840,,ui,message,    amazon-ebs: Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English%!(PACKER_COMMA) using SSH%!(PACKER_COMMA) with no agents to install on remote systems.
+1471626840,,ui,message,    amazon-ebs:
+1471626840,,ui,message,    amazon-ebs: http://ansible.com/
+1471626840,,ui,message,    amazon-ebs: More info: https://launchpad.net/~ansible/+archive/ubuntu/ansible
+1471626841,,ui,message,    amazon-ebs: gpg: keyring `/tmp/tmpx2410upe/secring.gpg' created
+1471626841,,ui,message,    amazon-ebs: gpg: keyring `/tmp/tmpx2410upe/pubring.gpg' created
+1471626841,,ui,message,    amazon-ebs: gpg: requesting key 7BB9C367 from hkp server keyserver.ubuntu.com
+1471626842,,ui,message,    amazon-ebs: OK
+1471626842,,ui,message,    amazon-ebs: gpg: /tmp/tmpx2410upe/trustdb.gpg: trustdb created
+1471626842,,ui,message,    amazon-ebs: gpg: key 7BB9C367: public key "Launchpad PPA for Ansible%!(PACKER_COMMA) Inc." imported
+1471626842,,ui,message,    amazon-ebs: gpg: Total number processed: 1
+1471626842,,ui,message,    amazon-ebs: gpg:               imported: 1  (RSA: 1)
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily InRelease
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates InRelease
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports InRelease
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/main Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/restricted Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/universe Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/multiverse Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/main amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/restricted amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/universe amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/multiverse amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/main Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/multiverse Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/restricted Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily/universe Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/main Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/main amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/main Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/multiverse Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/restricted Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-updates/universe Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/main Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/main amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse amd64 Packages
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/main Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/multiverse Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/restricted Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://us-west-1.ec2.archive.ubuntu.com wily-backports/universe Translation-en
+1471626842,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security InRelease
+1471626842,,ui,message,    amazon-ebs: Get:1 http://ppa.launchpad.net wily InRelease [16.0 kB]
+1471626842,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/main Sources
+1471626842,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/restricted Sources
+1471626843,,ui,message,    amazon-ebs: Get:2 http://ppa.launchpad.net wily/main amd64 Packages [528 B]
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/universe Sources
+1471626843,,ui,message,    amazon-ebs: Get:3 http://ppa.launchpad.net wily/main Translation-en [322 B]
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/multiverse Sources
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/main amd64 Packages
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/restricted amd64 Packages
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/universe amd64 Packages
+1471626843,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/multiverse amd64 Packages
+1471626844,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/main Translation-en
+1471626844,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/multiverse Translation-en
+1471626844,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/restricted Translation-en
+1471626844,,ui,message,    amazon-ebs: Hit http://security.ubuntu.com wily-security/universe Translation-en
+1471626845,,ui,message,    amazon-ebs: Fetched 16.8 kB in 3s (5%!(PACKER_COMMA)429 B/s)
+1471626851,,ui,message,    amazon-ebs: Reading package lists...
+1471626851,,ui,message,    amazon-ebs: Reading package lists...
+1471626851,,ui,message,    amazon-ebs: Building dependency tree...
+1471626851,,ui,message,    amazon-ebs: Reading state information...
+1471626851,,ui,message,    amazon-ebs: The following extra packages will be installed:
+1471626851,,ui,message,    amazon-ebs: python-crypto python-ecdsa python-httplib2 python-jinja2 python-markupsafe
+1471626851,,ui,message,    amazon-ebs: python-paramiko python-yaml sshpass
+1471626851,,ui,message,    amazon-ebs: Suggested packages:
+1471626851,,ui,message,    amazon-ebs: python-crypto-dbg python-crypto-doc python-jinja2-doc
+1471626851,,ui,message,    amazon-ebs: The following NEW packages will be installed:
+1471626851,,ui,message,    amazon-ebs: ansible python-crypto python-ecdsa python-httplib2 python-jinja2
+1471626851,,ui,message,    amazon-ebs: python-markupsafe python-paramiko python-yaml sshpass
+1471626851,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 9 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1471626851,,ui,message,    amazon-ebs: Need to get 1%!(PACKER_COMMA)901 kB of archives.
+1471626851,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 12.9 MB of additional disk space will be used.
+1471626851,,ui,message,    amazon-ebs: Get:1 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-markupsafe amd64 0.23-2build1 [15.7 kB]
+1471626851,,ui,message,    amazon-ebs: Get:2 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-jinja2 all 2.8-1 [109 kB]
+1471626851,,ui,message,    amazon-ebs: Get:3 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-yaml amd64 3.11-2build1 [109 kB]
+1471626851,,ui,message,    amazon-ebs: Get:4 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-crypto amd64 2.6.1-5build1 [242 kB]
+1471626851,,ui,message,    amazon-ebs: Get:5 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-ecdsa all 0.13-2 [34.0 kB]
+1471626851,,ui,message,    amazon-ebs: Get:6 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-paramiko all 1.15.2-1 [106 kB]
+1471626851,,ui,message,    amazon-ebs: Get:7 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/main python-httplib2 all 0.9+dfsg-2 [34.3 kB]
+1471626851,,ui,message,    amazon-ebs: Get:8 http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ wily/universe sshpass amd64 1.05-1 [10.5 kB]
+1471626852,,ui,message,    amazon-ebs: Get:9 http://ppa.launchpad.net/ansible/ansible/ubuntu/ wily/main ansible all 2.1.1.0-1ppa~wily [1%!(PACKER_COMMA)241 kB]
+1471626853,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1471626853,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1471626853,,ui,message,    amazon-ebs: Fetched 1%!(PACKER_COMMA)901 kB in 1s (1%!(PACKER_COMMA)083 kB/s)
+1471626853,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1471626853,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Readline
+1471626853,,ui,message,    amazon-ebs: debconf: (This frontend requires a controlling tty.)
+1471626853,,ui,message,    amazon-ebs: debconf: falling back to frontend: Teletype
+1471626853,,ui,message,    amazon-ebs: dpkg-preconfigure: unable to re-open stdin:
+1471626853,,ui,message,    amazon-ebs: Selecting previously unselected package python-markupsafe.
+1471626853,,ui,message,    amazon-ebs: (Reading database ... 57073 files and directories currently installed.)
+1471626853,,ui,message,    amazon-ebs: Preparing to unpack .../python-markupsafe_0.23-2build1_amd64.deb ...
+1471626853,,ui,message,    amazon-ebs: Unpacking python-markupsafe (0.23-2build1) ...
+1471626853,,ui,message,    amazon-ebs: Selecting previously unselected package python-jinja2.
+1471626853,,ui,message,    amazon-ebs: Preparing to unpack .../python-jinja2_2.8-1_all.deb ...
+1471626853,,ui,message,    amazon-ebs: Unpacking python-jinja2 (2.8-1) ...
+1471626854,,ui,message,    amazon-ebs: Selecting previously unselected package python-yaml.
+1471626854,,ui,message,    amazon-ebs: Preparing to unpack .../python-yaml_3.11-2build1_amd64.deb ...
+1471626854,,ui,message,    amazon-ebs: Unpacking python-yaml (3.11-2build1) ...
+1471626854,,ui,message,    amazon-ebs: Selecting previously unselected package python-crypto.
+1471626854,,ui,message,    amazon-ebs: Preparing to unpack .../python-crypto_2.6.1-5build1_amd64.deb ...
+1471626854,,ui,message,    amazon-ebs: Unpacking python-crypto (2.6.1-5build1) ...
+1471626855,,ui,message,    amazon-ebs: Selecting previously unselected package python-ecdsa.
+1471626855,,ui,message,    amazon-ebs: Preparing to unpack .../python-ecdsa_0.13-2_all.deb ...
+1471626855,,ui,message,    amazon-ebs: Unpacking python-ecdsa (0.13-2) ...
+1471626855,,ui,message,    amazon-ebs: Selecting previously unselected package python-paramiko.
+1471626855,,ui,message,    amazon-ebs: Preparing to unpack .../python-paramiko_1.15.2-1_all.deb ...
+1471626855,,ui,message,    amazon-ebs: Unpacking python-paramiko (1.15.2-1) ...
+1471626855,,ui,message,    amazon-ebs: Selecting previously unselected package python-httplib2.
+1471626855,,ui,message,    amazon-ebs: Preparing to unpack .../python-httplib2_0.9+dfsg-2_all.deb ...
+1471626855,,ui,message,    amazon-ebs: Unpacking python-httplib2 (0.9+dfsg-2) ...
+1471626855,,ui,message,    amazon-ebs: Selecting previously unselected package sshpass.
+1471626855,,ui,message,    amazon-ebs: Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
+1471626855,,ui,message,    amazon-ebs: Unpacking sshpass (1.05-1) ...
+1471626856,,ui,message,    amazon-ebs: Selecting previously unselected package ansible.
+1471626856,,ui,message,    amazon-ebs: Preparing to unpack .../ansible_2.1.1.0-1ppa~wily_all.deb ...
+1471626856,,ui,message,    amazon-ebs: Unpacking ansible (2.1.1.0-1ppa~wily) ...
+1471626858,,ui,message,    amazon-ebs: Processing triggers for man-db (2.7.4-1) ...
+1471626858,,ui,message,    amazon-ebs: Setting up python-markupsafe (0.23-2build1) ...
+1471626859,,ui,message,    amazon-ebs: Setting up python-jinja2 (2.8-1) ...
+1471626859,,ui,message,    amazon-ebs: Setting up python-yaml (3.11-2build1) ...
+1471626859,,ui,message,    amazon-ebs: Setting up python-crypto (2.6.1-5build1) ...
+1471626859,,ui,message,    amazon-ebs: Setting up python-ecdsa (0.13-2) ...
+1471626860,,ui,message,    amazon-ebs: Setting up python-paramiko (1.15.2-1) ...
+1471626860,,ui,message,    amazon-ebs: Setting up python-httplib2 (0.9+dfsg-2) ...
+1471626860,,ui,message,    amazon-ebs: Setting up sshpass (1.05-1) ...
+1471626860,,ui,message,    amazon-ebs: Setting up ansible (2.1.1.0-1ppa~wily) ...
+1471626863,,ui,say,==> amazon-ebs: Provisioning with Ansible...
+1471626863,,ui,message,    amazon-ebs: Uploading Playbook directory to Ansible staging directory...
+1471626863,,ui,message,    amazon-ebs: Creating directory: /tmp/packer-provisioner-ansible-local
+1471626863,,ui,message,    amazon-ebs: Uploading main Playbook file...
+1471626864,,ui,message,    amazon-ebs: Uploading inventory file...
+1471626864,,ui,message,    amazon-ebs: Uploading group_vars directory...
+1471626864,,ui,message,    amazon-ebs: Creating directory: /tmp/packer-provisioner-ansible-local/group_vars
+1471626864,,ui,message,    amazon-ebs: Executing Ansible: cd /tmp/packer-provisioner-ansible-local && ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook /tmp/packer-provisioner-ansible-local/letuschop.yml -c local -i /tmp/packer-provisioner-ansible-local/packer-provisioner-ansible-local309188710
+1471626866,,ui,message,    amazon-ebs:
+1471626866,,ui,message,    amazon-ebs: PLAY [all] *********************************************************************
+1471626866,,ui,message,    amazon-ebs:
+1471626866,,ui,message,    amazon-ebs: TASK [setup] *******************************************************************
+1471626868,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626868,,ui,message,    amazon-ebs:
+1471626868,,ui,message,    amazon-ebs: TASK [base : install motd] *****************************************************
+1471626868,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626868,,ui,message,    amazon-ebs:
+1471626868,,ui,message,    amazon-ebs: TASK [base : set system timezone to UTC] ***************************************
+1471626868,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626868,,ui,message,    amazon-ebs:
+1471626868,,ui,message,    amazon-ebs: TASK [base : install EN language pack] *****************************************
+1471626894,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626894,,ui,message,    amazon-ebs:
+1471626894,,ui,message,    amazon-ebs: TASK [base : regenerate en_US locale] ******************************************
+1471626895,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626895,,ui,message,    amazon-ebs:
+1471626895,,ui,message,    amazon-ebs: TASK [base : reconfigure locales] **********************************************
+1471626907,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626907,,ui,message,    amazon-ebs:
+1471626907,,ui,message,    amazon-ebs: TASK [base : install jq 1.5] ***************************************************
+1471626910,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626910,,ui,message,    amazon-ebs:
+1471626910,,ui,message,    amazon-ebs: TASK [nginx : install s3cmd for uploading nginx logs] **************************
+1471626914,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626914,,ui,message,    amazon-ebs:
+1471626914,,ui,message,    amazon-ebs: TASK [nginx : creating nginx ssl cert repo directory] **************************
+1471626914,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626914,,ui,message,    amazon-ebs:
+1471626914,,ui,message,    amazon-ebs: TASK [nginx : adding nginx signing key] ****************************************
+1471626914,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626914,,ui,message,    amazon-ebs:
+1471626914,,ui,message,    amazon-ebs: TASK [nginx : downloading apt-get nginx repository] ****************************
+1471626914,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626914,,ui,message,    amazon-ebs:
+1471626914,,ui,message,    amazon-ebs: TASK [nginx : find Ubuntu release] *********************************************
+1471626914,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626914,,ui,message,    amazon-ebs:
+1471626914,,ui,message,    amazon-ebs: TASK [nginx : adding sources.list deb-src url for nginx] ***********************
+1471626915,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626915,,ui,message,    amazon-ebs:
+1471626915,,ui,message,    amazon-ebs: TASK [nginx : installing nginx via apt-get] ************************************
+1471626931,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626931,,ui,message,    amazon-ebs:
+1471626931,,ui,message,    amazon-ebs: TASK [nginx : install dhparam file] ********************************************
+1471626932,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626932,,ui,message,    amazon-ebs:
+1471626932,,ui,message,    amazon-ebs: TASK [nginx : remove default nginx conf] ***************************************
+1471626932,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626932,,ui,message,    amazon-ebs:
+1471626932,,ui,message,    amazon-ebs: TASK [nginx : remove default ssl nginx conf] ***********************************
+1471626932,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626932,,ui,message,    amazon-ebs:
+1471626932,,ui,message,    amazon-ebs: TASK [nginx : install main nginx configuration files] **************************
+1471626932,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item={u'path': u'/etc/nginx/'%!(PACKER_COMMA) u'name': u'nginx.conf'})[0m
+1471626932,,ui,message,    amazon-ebs:
+1471626932,,ui,message,    amazon-ebs: TASK [nginx : install s3cmd for uploading nginx logs] **************************
+1471626932,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626932,,ui,message,    amazon-ebs:
+1471626932,,ui,message,    amazon-ebs: TASK [nginx : creating nginx ssl cert repo directory] **************************
+1471626932,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626933,,ui,message,    amazon-ebs:
+1471626933,,ui,message,    amazon-ebs: TASK [nginx : adding nginx signing key] ****************************************
+1471626933,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626933,,ui,message,    amazon-ebs:
+1471626933,,ui,message,    amazon-ebs: TASK [nginx : downloading apt-get nginx repository] ****************************
+1471626933,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626933,,ui,message,    amazon-ebs:
+1471626933,,ui,message,    amazon-ebs: TASK [nginx : find Ubuntu release] *********************************************
+1471626933,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626933,,ui,message,    amazon-ebs:
+1471626933,,ui,message,    amazon-ebs: TASK [nginx : adding sources.list deb-src url for nginx] ***********************
+1471626933,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626933,,ui,message,    amazon-ebs:
+1471626933,,ui,message,    amazon-ebs: TASK [nginx : installing nginx via apt-get] ************************************
+1471626937,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626937,,ui,message,    amazon-ebs:
+1471626937,,ui,message,    amazon-ebs: TASK [nginx : install dhparam file] ********************************************
+1471626937,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626937,,ui,message,    amazon-ebs:
+1471626937,,ui,message,    amazon-ebs: TASK [nginx : remove default nginx conf] ***************************************
+1471626938,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626938,,ui,message,    amazon-ebs:
+1471626938,,ui,message,    amazon-ebs: TASK [nginx : remove default ssl nginx conf] ***********************************
+1471626938,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626938,,ui,message,    amazon-ebs:
+1471626938,,ui,message,    amazon-ebs: TASK [nginx : install main nginx configuration files] **************************
+1471626938,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1] => (item={u'path': u'/etc/nginx/'%!(PACKER_COMMA) u'name': u'nginx.conf'})[0m
+1471626938,,ui,message,    amazon-ebs:
+1471626938,,ui,message,    amazon-ebs: TASK [consul : install deps] ***************************************************
+1471626939,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1] => (item=[u'unzip'])[0m
+1471626939,,ui,message,    amazon-ebs:
+1471626939,,ui,message,    amazon-ebs: TASK [consul : create consul-template directory structure] *********************
+1471626939,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=/opt/consul-template)[0m
+1471626939,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=/opt/consul-template/bin)[0m
+1471626939,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=/opt/consul-template/config)[0m
+1471626939,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=/opt/consul-template/templates)[0m
+1471626939,,ui,message,    amazon-ebs:
+1471626939,,ui,message,    amazon-ebs: TASK [consul : download consul-template binary] ********************************
+1471626940,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1 -> localhost][0m
+1471626940,,ui,message,    amazon-ebs:
+1471626940,,ui,message,    amazon-ebs: TASK [consul : unzip consul-template binary into place] ************************
+1471626940,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626940,,ui,message,    amazon-ebs:
+1471626940,,ui,message,    amazon-ebs: TASK [consul : copy consul-template systemd service configuration] *************
+1471626941,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626941,,ui,message,    amazon-ebs:
+1471626941,,ui,message,    amazon-ebs: TASK [consul : copy consul-template upstart service configuration] *************
+1471626941,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626941,,ui,message,    amazon-ebs:
+1471626941,,ui,message,    amazon-ebs: TASK [consul : add consul-template to path through profile.d] ******************
+1471626941,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626941,,ui,message,    amazon-ebs:
+1471626941,,ui,message,    amazon-ebs: TASK [consul : consul-template config file] ************************************
+1471626941,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626941,,ui,message,    amazon-ebs:
+1471626941,,ui,message,    amazon-ebs: TASK [consul : enable consul-template service] *********************************
+1471626941,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626941,,ui,message,    amazon-ebs:
+1471626941,,ui,message,    amazon-ebs: TASK [consul : install consul dependencies] ************************************
+1471626942,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1] => (item=[u'unzip'%!(PACKER_COMMA) u'curl'])[0m
+1471626942,,ui,message,    amazon-ebs:
+1471626942,,ui,message,    amazon-ebs: TASK [consul : download consul binary] *****************************************
+1471626942,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626942,,ui,message,    amazon-ebs:
+1471626942,,ui,message,    amazon-ebs: TASK [consul : unarchive binary] ***********************************************
+1471626943,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626943,,ui,message,    amazon-ebs:
+1471626943,,ui,message,    amazon-ebs: TASK [consul : download consul web ui] *****************************************
+1471626943,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626943,,ui,message,    amazon-ebs:
+1471626943,,ui,message,    amazon-ebs: TASK [consul : create web ui directory] ****************************************
+1471626943,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626943,,ui,message,    amazon-ebs:
+1471626943,,ui,message,    amazon-ebs: TASK [consul : unarchive web ui] ***********************************************
+1471626944,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626944,,ui,message,    amazon-ebs:
+1471626944,,ui,message,    amazon-ebs: TASK [consul : add nginx config template (with oauth2-proxy option)] ***********
+1471626944,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626944,,ui,message,    amazon-ebs:
+1471626944,,ui,message,    amazon-ebs: TASK [consul : add consul-template config for nginx config template] ***********
+1471626944,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626944,,ui,message,    amazon-ebs:
+1471626944,,ui,message,    amazon-ebs: TASK [consul : add consul user] ************************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : create consul config dir] ***************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : create consul data dir] *****************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : create consul log] **********************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : add consul config] **********************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : add consul systemd] *********************************************
+1471626945,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : add consul upstart] *********************************************
+1471626945,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626945,,ui,message,    amazon-ebs:
+1471626945,,ui,message,    amazon-ebs: TASK [consul : install setup-network-environment] ******************************
+1471626946,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : enable setup-network-environment service] ***********************
+1471626946,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : enable consul service] ******************************************
+1471626946,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : install consul-snapshot dependencies] ***************************
+1471626946,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1] => (item=[]) [0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : download consul-snapshot binary] ********************************
+1471626946,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : unarchive binary] ***********************************************
+1471626946,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : add GOPATH directory] *******************************************
+1471626946,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : install consul-snapshot] ****************************************
+1471626946,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626946,,ui,message,    amazon-ebs:
+1471626946,,ui,message,    amazon-ebs: TASK [consul : add consul-snapshot upstart consul template config] *************
+1471626947,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626947,,ui,message,    amazon-ebs:
+1471626947,,ui,message,    amazon-ebs: TASK [consul : add consul-template config] *************************************
+1471626947,,ui,message,    amazon-ebs: [0;36mskipping: [127.0.0.1][0m
+1471626947,,ui,message,    amazon-ebs:
+1471626947,,ui,message,    amazon-ebs: TASK [consul : install dnsmasq] ************************************************
+1471626951,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626951,,ui,message,    amazon-ebs:
+1471626951,,ui,message,    amazon-ebs: TASK [consul : configure dnsmasq for consul dns] *******************************
+1471626951,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626951,,ui,message,    amazon-ebs:
+1471626951,,ui,message,    amazon-ebs: TASK [consul : enable the dnsmasq service] *************************************
+1471626951,,ui,message,    amazon-ebs: [0;32mok: [127.0.0.1][0m
+1471626951,,ui,message,    amazon-ebs:
+1471626951,,ui,message,    amazon-ebs: TASK [letuschop : copy consul-template config] *********************************
+1471626951,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=index.html.cfg)[0m
+1471626951,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=letuschop.conf.cfg)[0m
+1471626951,,ui,message,    amazon-ebs:
+1471626951,,ui,message,    amazon-ebs: TASK [letuschop : copy consul-template template] *******************************
+1471626952,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=index.html.ctmpl)[0m
+1471626952,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1] => (item=letuschop.conf.ctmpl)[0m
+1471626952,,ui,message,    amazon-ebs:
+1471626952,,ui,message,    amazon-ebs: TASK [letuschop : create root www directory] ***********************************
+1471626952,,ui,message,    amazon-ebs: [0;33mchanged: [127.0.0.1][0m
+1471626952,,ui,message,    amazon-ebs:
+1471626952,,ui,message,    amazon-ebs: PLAY RECAP *********************************************************************
+1471626952,,ui,message,    amazon-ebs: [0;33m127.0.0.1[0m                  : [0;32mok[0m[0;32m=[0m[0;32m60[0m   [0;33mchanged[0m[0;33m=[0m[0;33m44[0m   unreachable=0    failed=0
+1471626952,,ui,message,    amazon-ebs:
+1471626952,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/cleanup.sh
+1471626952,,ui,message,    amazon-ebs: Reading package lists...
+1471626953,,ui,message,    amazon-ebs: Building dependency tree...
+1471626953,,ui,message,    amazon-ebs: Reading state information...
+1471626953,,ui,message,    amazon-ebs: E: Unable to locate package anisble
+1471626953,,ui,message,    amazon-ebs: Reading package lists...
+1471626953,,ui,message,    amazon-ebs: Building dependency tree...
+1471626953,,ui,message,    amazon-ebs: Reading state information...
+1471626953,,ui,message,    amazon-ebs: The following packages will be REMOVED:
+1471626953,,ui,message,    amazon-ebs: ppp* pppconfig* pppoeconf*
+1471626953,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 0 newly installed%!(PACKER_COMMA) 3 to remove and 0 not upgraded.
+1471626953,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 1%!(PACKER_COMMA)364 kB disk space will be freed.
+1471626953,,ui,message,    amazon-ebs: (Reading database ... 59267 files and directories currently installed.)
+1471626953,,ui,message,    amazon-ebs: Removing pppoeconf (1.21ubuntu1) ...
+1471626953,,ui,message,    amazon-ebs: Purging configuration files for pppoeconf (1.21ubuntu1) ...
+1471626953,,ui,message,    amazon-ebs: Removing pppconfig (2.3.21) ...
+1471626954,,ui,message,    amazon-ebs: Purging configuration files for pppconfig (2.3.21) ...
+1471626954,,ui,message,    amazon-ebs: Removing ppp (2.4.6-3.1ubuntu1) ...
+1471626954,,ui,message,    amazon-ebs: Stopping all PPP connections...done.
+1471626954,,ui,message,    amazon-ebs: Purging configuration files for ppp (2.4.6-3.1ubuntu1) ...
+1471626955,,ui,message,    amazon-ebs: Processing triggers for man-db (2.7.4-1) ...
+1471626956,,ui,message,    amazon-ebs: Reading package lists...
+1471626956,,ui,message,    amazon-ebs: Building dependency tree...
+1471626956,,ui,message,    amazon-ebs: Reading state information...
+1471626957,,ui,message,    amazon-ebs: The following packages will be REMOVED:
+1471626957,,ui,message,    amazon-ebs: popularity-contest* ubuntu-standard*
+1471626957,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 0 newly installed%!(PACKER_COMMA) 2 to remove and 0 not upgraded.
+1471626957,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 177 kB disk space will be freed.
+1471626957,,ui,message,    amazon-ebs: (Reading database ... 59134 files and directories currently installed.)
+1471626957,,ui,message,    amazon-ebs: Removing ubuntu-standard (1.341) ...
+1471626957,,ui,message,    amazon-ebs: Removing popularity-contest (1.57ubuntu1) ...
+1471626957,,ui,message,    amazon-ebs: Purging configuration files for popularity-contest (1.57ubuntu1) ...
+1471626957,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1471626957,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1471626957,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1471626958,,ui,message,    amazon-ebs: Processing triggers for man-db (2.7.4-1) ...
+1471626959,,ui,message,    amazon-ebs: Reading package lists...
+1471626959,,ui,message,    amazon-ebs: Building dependency tree...
+1471626959,,ui,message,    amazon-ebs: Reading state information...
+1471626959,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 0 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1471626959,,ui,say,==> amazon-ebs: Stopping the source instance...
+1471626960,,ui,say,==> amazon-ebs: Waiting for the instance to stop...
+1471627012,,ui,say,==> amazon-ebs: Creating the AMI: letuschop-1471626547
+1471627012,,ui,message,    amazon-ebs: AMI: ami-eb77358b
+1471627012,,ui,say,==> amazon-ebs: Waiting for AMI to become ready...
+1471627205,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1471627212,,ui,say,==> amazon-ebs: Cleaning up any extra volumes...
+1471627212,,ui,say,==> amazon-ebs: No volumes to clean up%!(PACKER_COMMA) skipping
+1471627212,,ui,say,==> amazon-ebs: Deleting temporary security group...
+1471627212,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1471627212,,ui,say,Build 'amazon-ebs' finished.
+1471627212,,ui,say,\n==> Builds finished. The artifacts of successful builds are:
+1471627212,amazon-ebs,artifact-count,1
+1471627212,amazon-ebs,artifact,0,builder-id,mitchellh.amazonebs
+1471627212,amazon-ebs,artifact,0,id,us-west-1:ami-eb77358b
+1471627212,amazon-ebs,artifact,0,string,AMIs were created:\n\nus-west-1: ami-eb77358b
+1471627212,amazon-ebs,artifact,0,files-count,0
+1471627212,amazon-ebs,artifact,0,end
+1471627212,,ui,say,--> amazon-ebs: AMIs were created:\n\nus-west-1: ami-eb77358b

@@ -1,0 +1,8 @@
+letuschop:
+  build: local/
+  dockerfile: Dockerfile
+  volumes:
+    - ./:/etc/letuschop
+  environment:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
